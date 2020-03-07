@@ -9,11 +9,6 @@
 --as a ranking of strongest to weakest trainer. You may interpret strongest in whatever way you 
 --want, but you will have to explain your decision.
 
-SELECT p.id, p.name AS pokeman_name, tr.trainername, pt.pokelevel, p.primary_type, ty.name, p.secondary_type, ty.name, sum(pokelevel)
-FROM pokemons AS p, trainers AS tr, pokemon_trainer AS pt, types AS ty
-WHERE p.id = pt.pokemon_id AND pt.trainerID = tr.trainerID AND ty.id = p.id
-ORDER BY p.id;
-
 SELECT p.id, p.name AS pokeman_name,
        tr.trainername AS trainer_name,
        pt.pokelevel AS level,
